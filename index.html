@@ -34,6 +34,7 @@
 
 		ga('create', 'UA-104464953-1', 'auto');
 		ga('send', 'pageview');
+
 	</script>
 </head>
 
@@ -56,7 +57,7 @@
 
 	<div id="movies">
 		<div id="vue">
-			<div class="grid-sizer element-item" v-repeat="obj">
+			<div class="grid-sizer element-item" v-repeat="contents">
 				<blockquote class="twitter-tweet" data-lang="ja" data-conversation="none">
 					<a href="{{url}}"></a>
 				</blockquote>
@@ -72,37 +73,31 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.3/js/smooth-scroll.min.js"></script>
 	<script src="assets/js/main.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.2.2/masonry.pkgd.min.js"></script>
+	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.11.5/vue.min.js"></script>
 	<script type="text/javascript">
-		$(function() {
-			$.ajax({
-				url: 'urls.txt'
-			}).done(function(data) {
-				var data_array = data.split(/\r\n|\r|\n/);
-				var len = data_array.length;
+		var jqXHR = $.getJSON('urls.json');
+		jqXHR.done(function(json) {
+			var val = getUrlVars();
+			if (val.mode == 'hide_tweet') {
+				$('.twitter-tweet').addClass('twitter-video').removeClass('twitter-tweet');
+				var menu_for_hide = $('#hide_tweet');
+				menu_for_hide.text("Show Tweet");
+				menu_for_hide.attr('href', "index.html");
+			}
 
-				var obj = [];
-				for (var i = 0; i < len; i++) {
-					obj.push({
-						url: data_array[i]
+			var vue = new Vue({
+				el: '#vue',
+				data: {
+					contents: json
+				}
+			});
+		}).then(function() {
+			twttr.ready(function(twttr) {
+				twttr.events.bind('loaded', function(event) {
+					$('#movies').isotope({
+						itemSelector: '.element-item'
 					});
-					//　console.log(data_array[i]);
-				}
-
-				var val = getUrlVars();
-				if (val.mode == 'hide_tweet') {
-					$('.twitter-tweet').addClass('twitter-video').removeClass('twitter-tweet');
-					var menu_for_hide = $('#hide_tweet');
-					menu_for_hide.text("Show Tweet");
-					menu_for_hide.attr('href', "index.html");
-				}
-
-				var vue = new Vue({
-					el: '#vue',
-					data: {
-						obj
-					}
 				});
 			});
 		});
@@ -122,14 +117,6 @@
 			});
 		}(document, 'script', 'twitter-wjs');
 
-		twttr.ready(function(twttr) {
-			twttr.events.bind('loaded', function(event) {
-				$('#movies').masonry({
-					itemSelector: '.element-item'
-				});
-			});
-		});
-
 		function getUrlVars() {
 			var vars = [],
 				max = 0,
@@ -147,6 +134,7 @@
 
 			return vars;
 		}
+
 	</script>
 	<script type="text/javascript">
 		$(function() {
@@ -172,6 +160,7 @@
 				return false;
 			});
 		});
+
 	</script>
 </body>
 
