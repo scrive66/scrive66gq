@@ -55,9 +55,20 @@
 		<h1>しゃふろんの演奏動画まとめ <a href="https://twitter.com/scrive66"><i class="fa fa-twitter"></i></a></h1>
 	</div>
 
+	<div class="container">
+		<div class="filters button-group">
+			<button class="button active" data-filter="*">全て</button>
+			<button class="button" data-filter=".fingerstyle">ソロギター</button>
+			<button class="button" data-filter=".song">歌</button>
+			<button class="button" data-filter=".traditional">伝統曲</button>
+			<button class="button" data-filter=".ghibli">ジブリ</button>
+			<button class="button" data-filter=".other">その他</button>
+		</div>
+	</div>
+
 	<div id="movies">
 		<div id="vue">
-			<div class="grid-sizer element-item" v-repeat="contents">
+			<div class="grid-sizer element-item {{category}}" v-repeat="contents">
 				<blockquote class="twitter-tweet" data-lang="ja" data-conversation="none">
 					<a href="{{url}}"></a>
 				</blockquote>
@@ -76,6 +87,7 @@
 	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.11.5/vue.min.js"></script>
 	<script type="text/javascript">
+		var $filterValue = '*';
 		var jqXHR = $.getJSON('urls.json');
 		jqXHR.done(function(json) {
 			var val = getUrlVars();
@@ -84,6 +96,11 @@
 				var menu_for_hide = $('#hide_tweet');
 				menu_for_hide.text("Show Tweet");
 				menu_for_hide.attr('href', "index.html");
+			}
+			if (val.filter_value) {
+				$filterValue = "." + val.filter_value;
+				$('.active').removeClass('active');
+				$(".filters").find("[data-filter='" + $filterValue + "']").addClass('active');
 			}
 
 			var vue = new Vue({
@@ -96,7 +113,8 @@
 			twttr.ready(function(twttr) {
 				twttr.events.bind('loaded', function(event) {
 					$('#movies').isotope({
-						itemSelector: '.element-item'
+						itemSelector: '.element-item',
+						filter: $filterValue
 					});
 				});
 			});
@@ -134,6 +152,20 @@
 
 			return vars;
 		}
+
+	</script>
+	<script type="text/javascript">
+		$(function() {
+			$('.filters').on('click', 'button', function() {
+				$filterValue = $(this).attr('data-filter');
+
+				var $active = $(this).parent().find('.active');
+				$.cookie("filterValue", $filterValue);
+				$container.isotope({
+					filter: $filterValue
+				});
+			});
+		});
 
 	</script>
 	<script type="text/javascript">
