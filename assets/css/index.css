@@ -27,6 +27,8 @@ body {
 	height: auto;
 	background: #555555;
 	color: white;
+	white-space: nowrap;
+	display: inline-block;
 }
 
 #footer {

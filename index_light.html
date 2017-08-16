@@ -7,10 +7,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="">
 	<meta name="author" content="">
-	<title>しゃふろんの演奏動画まとめ</title>
+	<title>しゃふろんの演奏動画まとめ 軽量ページ</title>
 	<link href="assets/css/style.css" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link href="assets/css/index.css" rel="stylesheet">
+	<link href="assets/css/index_light.css" rel="stylesheet">
 	<link rel="icon" type="image/jpg" href="https://pbs.twimg.com/profile_images/875481262449872896/GM-wKQET_400x400.jpg" />
 	<!-- Just for debugging purposes. Don't actually copy this line! -->
 	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -19,23 +20,6 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-	<script>
-		(function(i, s, o, g, r, a, m) {
-			i['GoogleAnalyticsObject'] = r;
-			i[r] = i[r] || function() {
-				(i[r].q = i[r].q || []).push(arguments)
-			}, i[r].l = 1 * new Date();
-			a = s.createElement(o),
-				m = s.getElementsByTagName(o)[0];
-			a.async = 1;
-			a.src = g;
-			m.parentNode.insertBefore(a, m)
-		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
-		ga('create', 'UA-104464953-1', 'auto');
-		ga('send', 'pageview');
-
-	</script>
 </head>
 
 <body data-spy="scroll" data-offset="0" data-target="#theMenu">
@@ -56,21 +40,9 @@
 		<h1><span>しゃふろんの演奏動画</span><wbr><span>まとめ <a href="https://twitter.com/scrive66"><i class="fa fa-twitter fix"></i></a></span></h1>
 	</div>
 
-	<div class="container">
-		<div class="filters button-group">
-			<button class="button active" data-filter=".recommend">おすすめ</button>
-			<button class="button" data-filter=".fingerstyle">ソロギター</button>
-			<button class="button" data-filter=".song">歌</button>
-			<button class="button" data-filter=".instrumental">インスト</button>
-			<button class="button" data-filter=".practice">練習</button>
-			<button class="button" data-filter=".other">その他</button>
-			<button class="button" data-filter="*">全て</button>
-		</div>
-	</div>
-
 	<div id="movies">
 		<div id="vue">
-			<div class="grid-sizer element-item {{category}}" v-repeat="contents">
+			<div class="grid-sizer element-item {{category}}" v-repeat="contents | filterBy 'recommend' in 'category'">
 				<blockquote class="twitter-tweet" data-lang="ja" data-conversation="none">
 					<a href="{{url}}"></a>
 				</blockquote>
@@ -79,7 +51,7 @@
 	</div>
 
 	<div id="footer">
-		<a href="index_light.html" class="fix">軽量版 <i class="fa fa-rocket"></i></a> &nbsp;&nbsp;&nbsp;
+		<a href="index.html" class="fix">フル機能版 <i class="fa fa-truck"></i></a> &nbsp;&nbsp;&nbsp;
 		<a href="" onclick="window.location.reload();" class="fix">再読込 <i class="fa fa-refresh"></i></a> &nbsp;&nbsp;&nbsp;
 		<a href="#home" class="fix">トップへ戻る <i class="fa fa-arrow-up"></i></a>
 	</div>
@@ -87,7 +59,6 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.3/js/smooth-scroll.min.js"></script>
 	<script src="assets/js/main.js"></script>
-	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.11.5/vue.min.js"></script>
 	<script type="text/javascript">
 		var $filterValue = '.recommend';
@@ -112,16 +83,7 @@
 					contents: json
 				}
 			});
-		}).then(function() {
-			twttr.ready(function(twttr) {
-				twttr.events.bind('loaded', function(event) {
-					$('#movies').isotope({
-						itemSelector: '.element-item',
-						filter: $filterValue
-					});
-				});
-			});
-		});
+		})
 
 		window.twttr = function(d, s, id) {
 			var t, js, fjs = d.getElementsByTagName(s)[0];
@@ -155,21 +117,6 @@
 
 			return vars;
 		}
-
-	</script>
-	<script type="text/javascript">
-		$(function() {
-			$('.filters').on('click', 'button', function() {
-				$filterValue = $(this).attr('data-filter');
-				$('.active').removeClass('active');
-				$(".filters").find("[data-filter='" + $filterValue + "']").addClass('active');
-
-				$('#movies').isotope({
-					filter: $filterValue
-				});
-			});
-		});
-
 	</script>
 	<script type="text/javascript">
 		$(function() {
@@ -195,7 +142,6 @@
 				return false;
 			});
 		});
-
 	</script>
 </body>
 
