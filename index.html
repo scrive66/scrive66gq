@@ -58,12 +58,13 @@
 
 	<div class="container">
 		<div class="filters button-group">
-			<button class="button active" data-filter="*">全て</button>
+			<button class="button active" data-filter=".recommend">おすすめ</button>
 			<button class="button" data-filter=".fingerstyle">ソロギター</button>
 			<button class="button" data-filter=".song">歌</button>
-			<button class="button" data-filter=".traditional">伝統曲</button>
-			<button class="button" data-filter=".ghibli">ジブリ</button>
+			<button class="button" data-filter=".instrumental">インスト</button>
+			<button class="button" data-filter=".practice">練習</button>
 			<button class="button" data-filter=".other">その他</button>
+			<button class="button" data-filter="*">全て</button>
 		</div>
 	</div>
 
@@ -88,7 +89,7 @@
 	<script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.11.5/vue.min.js"></script>
 	<script type="text/javascript">
-		var $filterValue = '*';
+		var $filterValue = '.recommend';
 		var jqXHR = $.getJSON('urls.json');
 		jqXHR.done(function(json) {
 			var val = getUrlVars();

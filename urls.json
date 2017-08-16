@@ -1,237 +1,311 @@
 [
 	{
+		"name": "Night in TAIPEI",
+		"url": "https://twitter.com/scrive66/status/897627386249961477",
+		"category": "practice"
+	},
+	{
+		"name": "Baby's eyes",
+		"url": "https://twitter.com/scrive66/status/897626074045087746",
+		"category": "practice"
+	},
+	{
+		"name": "君のいない世界には音も色もない",
+		"url": "https://twitter.com/scrive66/status/897608573198278656",
+		"category": "practice"
+	},
+	{
+		"name": "別れの曲",
 		"url": "https://twitter.com/scrive66/status/896292187989721088",
-		"category": "traditional"
+		"category": "instrumental recommend"
 	},
 	{
+		"name": "流星",
 		"url": "https://twitter.com/scrive66/status/896273597097926657",
-		"category": "fingerstyle"
+		"category": "fingerstyle recommend"
 	},
 	{
+		"name": "魔法がとけるその前に",
 		"url": "https://twitter.com/scrive66/status/896222490514530306",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "東海道新幹線",
 		"url": "https://twitter.com/scrive66/status/887095352549023745",
 		"category": "other"
 	},
 	{
+		"name": "JR東海",
 		"url": "https://twitter.com/scrive66/status/886933700360904704",
 		"category": "other"
 	},
 	{
+		"name": "雨の日の贈り物",
 		"url": "https://twitter.com/scrive66/status/886592836111540226",
-		"category": "fingerstyle"
+		"category": "practice"
 	},
 	{
+		"name": "にびいろ2m20s",
 		"url": "https://twitter.com/scrive66/status/886055793933426692",
-		"category": "fingerstyle"
+		"category": "practice"
 	},
 	{
+		"name": "琥珀の月",
 		"url": "https://twitter.com/scrive66/status/883676122889699328",
-		"category": "fingerstyle"
+		"category": "fingerstyle recommend"
 	},
 	{
+		"name": "The Summer Wars",
 		"url": "https://twitter.com/scrive66/status/883523427281260544",
-		"category": "instrumental"
+		"category": "instrumental recommend"
 	},
 	{
+		"name": "Arrietty's Song",
 		"url": "https://twitter.com/scrive66/status/883294188489515008",
-		"category": "ghibli"
+		"category": "instrumental recommend"
 	},
 	{
+		"name": "にびいろストリング",
 		"url": "https://twitter.com/scrive66/status/882551353049927680",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "Malaguena",
 		"url": "https://twitter.com/scrive66/status/879338023015464960",
-		"category": "traditional"
+		"category": "instrumental"
 	},
 	{
+		"name": "少年時代",
 		"url": "https://twitter.com/scrive66/status/874074057922170880",
 		"category": "song"
 	},
 	{
+		"name": "遠き春",
 		"url": "https://twitter.com/scrive66/status/873354216642797569",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "HOF2",
 		"url": "https://twitter.com/scrive66/status/873338245001560064",
 		"category": "other"
 	},
 	{
+		"name": "代表曲集",
 		"url": "https://twitter.com/scrive66/status/870240852672561152",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "南澤エチュード１",
 		"url": "https://twitter.com/scrive66/status/868310230857203712",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "風薫る季節",
 		"url": "https://twitter.com/scrive66/status/865725112523161601",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "セルフ倍速",
 		"url": "https://twitter.com/scrive66/status/863897272731320320",
 		"category": "other"
 	},
 	{
+		"name": "母の日",
 		"url": "https://twitter.com/scrive66/status/863557522350686208",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "君と僕の物語",
 		"url": "https://twitter.com/scrive66/status/863355399348539392",
-		"category": "fingerstyle"
+		"category": "fingerstyle recommend"
 	},
 	{
+		"name": "世界に一つだけの花",
 		"url": "https://twitter.com/scrive66/status/858139479868964864",
 		"category": "other"
 	},
 	{
+		"name": "糸",
 		"url": "https://twitter.com/scrive66/status/851954393754865664",
-		"category": "song"
+		"category": "song recommend"
 	},
 	{
+		"name": "Dandelion",
 		"url": "https://twitter.com/scrive66/status/850654516416438273",
-		"category": "fingerstyle"
+		"category": "fingerstyle recommend"
 	},
 	{
+		"name": "Thank you for...",
 		"url": "https://twitter.com/scrive66/status/848513508220309504",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "Guitar pro 6",
 		"url": "https://twitter.com/scrive66/status/847448419320774656",
 		"category": "other"
 	},
 	{
+		"name": "13フレットのオルゴール",
 		"url": "https://twitter.com/scrive66/status/841207609067618304",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "windmill",
 		"url": "https://twitter.com/scrive66/status/840553788545032192",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "cycling road",
 		"url": "https://twitter.com/scrive66/status/840375551999201280",
-		"category": "fingerstyle"
+		"category": "fingerstyle recommend"
 	},
 	{
+		"name": "春、来る",
 		"url": "https://twitter.com/scrive66/status/840351559141675008",
-		"category": "fingerstyle"
+		"category": "fingerstyle recommend"
 	},
 	{
+		"name": "I say yes",
 		"url": "https://twitter.com/scrive66/status/835109901449871360",
 		"category": "song"
 	},
 	{
+		"name": "Carolan's Ramble to Cashel",
 		"url": "https://twitter.com/scrive66/status/830679238411890689",
-		"category": "traditional"
+		"category": "instrumental"
 	},
 	{
+		"name": "Deireadh Fómhair",
 		"url": "https://twitter.com/scrive66/status/830425159135735810",
-		"category": "traditional"
+		"category": "instrumental recommend"
 	},
 	{
+		"name": "After rain",
 		"url": "https://twitter.com/scrive66/status/830415678939099136",
-		"category": "fingerstyle"
+		"category": "fingerstyle recommend"
 	},
 	{
+		"name": "夜明け前",
 		"url": "https://twitter.com/scrive66/status/830338103764062208",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "ひまわりの約束",
 		"url": "https://twitter.com/scrive66/status/828403373019852800",
 		"category": "song"
 	},
 	{
+		"name": "このすば",
 		"url": "https://twitter.com/scrive66/status/827325504134881280",
 		"category": "song"
 	},
 	{
+		"name": "ずっと",
 		"url": "https://twitter.com/scrive66/status/826799494981234688",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "美しき人生",
 		"url": "https://twitter.com/scrive66/status/826792467949170688",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "星砂",
 		"url": "https://twitter.com/scrive66/status/826784248073850880",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "MOTHER",
 		"url": "https://twitter.com/scrive66/status/826772657479618561",
-		"category": "fingerstyle"
+		"category": "fingerstyle recommend"
 	},
 	{
+		"name": "Earth Angel",
 		"url": "https://twitter.com/scrive66/status/826760777214222337",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "オアシス",
 		"url": "https://twitter.com/scrive66/status/826744764703739904",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "風の詩",
 		"url": "https: //twitter.com/scrive66/status/826601697124311040",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "木もれ陽",
 		"url": "https://twitter.com/scrive66/status/826598691834179585",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "Merry Christmas Mr. Lawrence",
 		"url": "https://twitter.com/scrive66/status/826594749402345473",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "Landscape",
 		"url": "https://twitter.com/scrive66/status/826591316213583872",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "HARD RAIN",
 		"url": "https://twitter.com/scrive66/status/826588408919175169",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "翼",
 		"url": "https://twitter.com/scrive66/status/826586297917595648",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "眠れない夜に",
 		"url": "https://twitter.com/scrive66/status/826256988485017600",
-		"category": "fingerstyle"
+		"category": "other"
 	},
 	{
+		"name": "眠れない夜にイントロ",
 		"url": "https://twitter.com/scrive66/status/826057828519383040",
-		"category": "fingerstyle"
+		"category": "practice"
 	},
 	{
+		"name": "Felicityイントロ",
 		"url": "https://twitter.com/scrive66/status/825524049291808768",
-		"category": "fingerstyle"
+		"category": "practice"
 	},
 	{
+		"name": "ふたたび",
 		"url": "https://twitter.com/scrive66/status/822412762152374272",
-		"category": "ghibli"
+		"category": "instrumental recommend"
 	},
 	{
+		"name": "流れ行く雲",
 		"url": "https://twitter.com/scrive66/status/821709675712262144",
 		"category": "fingerstyle"
 	},
 	{
+		"name": "ragamuffin",
 		"url": "https://twitter.com/scrive66/status/821364827524239360",
-		"category": "fingerstyle"
+		"category": "practice"
 	},
 	{
+		"name": "stand by me base",
 		"url": "https://twitter.com/scrive66/status/820466934034485248",
 		"category": "other"
 	},
 	{
+		"name": "Chandler",
 		"url": "https://twitter.com/scrive66/status/820097024112504832",
-		"category": "fingerstyle"
+		"category": "fingerstyle recommend"
 	},
 	{
+		"name": "きよしこの夜",
 		"url": "https://twitter.com/scrive66/status/812578713158098944",
-		"category": "traditional"
+		"category": "song"
 	},
 	{
+		"name": "sunflower",
 		"url": "https://twitter.com/scrive66/status/807416361676718080",
 		"category": "fingerstyle"
 	}
