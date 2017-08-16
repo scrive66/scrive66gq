@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>しゃふろんの演奏動画まとめ</title>
+	<link href="assets/css/style.css" rel="stylesheet">
+	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link href="assets/css/index.css" rel="stylesheet">
+	<link rel="icon" type="image/jpg" href="https://pbs.twimg.com/profile_images/875481262449872896/GM-wKQET_400x400.jpg" />
+	<!-- Just for debugging purposes. Don't actually copy this line! -->
+	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+	<script>
+		(function(i, s, o, g, r, a, m) {
+			i['GoogleAnalyticsObject'] = r;
+			i[r] = i[r] || function() {
+				(i[r].q = i[r].q || []).push(arguments)
+			}, i[r].l = 1 * new Date();
+			a = s.createElement(o),
+				m = s.getElementsByTagName(o)[0];
+			a.async = 1;
+			a.src = g;
+			m.parentNode.insertBefore(a, m)
+		})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+		ga('create', 'UA-104464953-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+</head>
+
+<body data-spy="scroll" data-offset="0" data-target="#theMenu">
+	<nav class="menu" id="theMenu">
+		<div class="menu-wrap">
+			<h1 class="logo"><a href="index.html#home">演奏動画まとめ</a></h1>
+			<i class="fa fa-times menu-close"></i>
+			<a href="#home" class="smoothScroll">Home</a>
+			<a href="#movies" class="smoothScroll">Movies</a>
+			<a href="index.html?mode=hide_tweet" id="hide_tweet">Hide Tweet</a>
+			<a href="https://twitter.com/scrive66"><i class="fa fa-twitter"></i></a>
+		</div>
+		<div id="menuToggle"><i class="fa fa-bars"></i></div>
+	</nav>
+	<section id="home" name="home"></section>
+	<div class="container">
+		<h1>しゃふろんの演奏動画まとめ <a href="https://twitter.com/scrive66"><i class="fa fa-twitter"></i></a></h1>
+	</div>
+
+	<div id="movies">
+		<div id="vue">
+			<div class="grid-sizer element-item" v-repeat="obj">
+				<blockquote class="twitter-tweet" data-lang="ja" data-conversation="none">
+					<a href="{{url}}"></a>
+				</blockquote>
+			</div>
+		</div>
+	</div>
+
+	<div id="footer">
+		<a href="" onclick="window.location.reload();">再読込 <i class="fa fa-refresh"></i></a> &nbsp;&nbsp;&nbsp;
+		<a href="#home">トップへ戻る <i class="fa fa-arrow-up"></i></a>
+	</div>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/12.1.3/js/smooth-scroll.min.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.2.2/masonry.pkgd.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.11.5/vue.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$.ajax({
+				url: 'urls.txt'
+			}).done(function(data) {
+				var data_array = data.split(/\r\n|\r|\n/);
+				var len = data_array.length;
+
+				var obj = [];
+				for (var i = 0; i < len; i++) {
+					obj.push({
+						url: data_array[i]
+					});
+					//　console.log(data_array[i]);
+				}
+
+				var val = getUrlVars();
+				if (val.mode == 'hide_tweet') {
+					$('.twitter-tweet').addClass('twitter-video').removeClass('twitter-tweet');
+					var menu_for_hide = $('#hide_tweet');
+					menu_for_hide.text("Show Tweet");
+					menu_for_hide.attr('href', "index.html");
+				}
+
+				var vue = new Vue({
+					el: '#vue',
+					data: {
+						obj
+					}
+				});
+			});
+		});
+
+		window.twttr = function(d, s, id) {
+			var t, js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "https://platform.twitter.com/widgets.js";
+			fjs.parentNode.insertBefore(js, fjs);
+			return window.twttr || (t = {
+				_e: [],
+				ready: function(f) {
+					t._e.push(f)
+				}
+			});
+		}(document, 'script', 'twitter-wjs');
+
+		twttr.ready(function(twttr) {
+			twttr.events.bind('loaded', function(event) {
+				$('#movies').masonry({
+					itemSelector: '.element-item'
+				});
+			});
+		});
+
+		function getUrlVars() {
+			var vars = [],
+				max = 0,
+				hash = "",
+				array = "";
+			var url = window.location.search;
+
+			hash = url.slice(1).split('&');
+			max = hash.length;
+			for (var i = 0; i < max; i++) {
+				array = hash[i].split('=');
+				vars.push(array[0]);
+				vars[array[0]] = array[1];
+			}
+
+			return vars;
+		}
+	</script>
+	<script type="text/javascript">
+		$(function() {
+			// スクロールのオフセット値
+			var offsetY = -10;
+			// スクロールにかかる時間
+			var time = 500;
+
+			// ページ内リンクのみを取得
+			$('a[href^=#]').click(function() {
+				// 移動先となる要素を取得
+				var target = $(this.hash);
+				if (!target.length) return;
+				// 移動先となる値
+				var targetY = target.offset().top + offsetY;
+				// スクロールアニメーション
+				$('html,body').animate({
+					scrollTop: targetY
+				}, time, 'swing');
+				// ハッシュ書き換えとく
+				window.history.pushState(null, null, this.hash);
+				// デフォルトの処理はキャンセル
+				return false;
+			});
+		});
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>しゃふろんの演奏動画まとめ ツイートなし</title>
+	<link href="assets/css/bootstrap.css" rel="stylesheet">
+	<link href="assets/css/style.css" rel="stylesheet">
+	<link href="assets/css/font-awesome.min.css" rel="stylesheet">
+	<!--		<link href="assets/js/fancybox/jquery.fancybox.css" rel="stylesheet" />-->
+	<link href="assets/css/index.css" rel="stylesheet">
+	<link rel="icon" type="image/jpg" href="https://pbs.twimg.com/profile_images/875481262449872896/GM-wKQET_400x400.jpg" />
+	<!-- Just for debugging purposes. Don't actually copy this line! -->
+	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<!--<body data-spy="scroll" data-offset="0" data-target="#theMenu">-->
+
+<body>
+
+	<nav class="menu" id="theMenu">
+		<div class="menu-wrap">
+			<h1 class="logo"><a href="index.html#home">演奏動画まとめ</a></h1>
+			<i class="fa fa-times menu-close"></i>
+			<a href="#home" class="smoothScroll">Home</a>
+			<a href="#isotope" class="smoothScroll">Movies</a>
+			<a href="index.html">With Tweet</a>
+			<a href="https://twitter.com/scrive66"><i class="fa fa-twitter"></i></a>
+		</div>
+		<div id="menuToggle"><i class="fa fa-bars"></i></div>
+	</nav>
+	<section id="home" name="home"></section>
+	<div class="container">
+		<h1>しゃふろんの演奏動画まとめ <a href="https://twitter.com/scrive66"><i class="fa fa-twitter"></i></a></h1>
+	</div>
+
+	<div id="isotope">
+		<div id="vue">
+			<div class="grid-sizer element-item" v-repeat="obj">
+				<blockquote class="twitter-video" data-lang="ja" data-conversation="none">
+					<a href="{{url}}"></a>
+				</blockquote>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script src="assets/js/smoothscroll.js"></script>
+	<script src="assets/js/main.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.2.2/masonry.pkgd.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/0.11.5/vue.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			$.ajax({
+				url: 'urls.txt'
+			}).done(function(data) {
+				var data_array = data.split(/\r\n|\r|\n/);
+				var len = data_array.length;
+
+				var obj = [];
+				for (var i = 0; i < len; i++) {
+					obj.push({
+						url: data_array[i]
+					});
+					// console.log(data_array[i]);
+				}
+
+				var vue = new Vue({
+					el: '#vue',
+					data: {
+						obj
+					}
+				});
+			});
+		});
+
+		window.twttr = function(d, s, id) {
+			var t, js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s);
+			js.id = id;
+			js.src = "https://platform.twitter.com/widgets.js";
+			fjs.parentNode.insertBefore(js, fjs);
+			return window.twttr || (t = {
+				_e: [],
+				ready: function(f) {
+					t._e.push(f)
+				}
+			});
+		}(document, 'script', 'twitter-wjs');
+
+		twttr.ready(function(twttr) {
+			twttr.events.bind('loaded', function(event) {
+				$('#isotope').masonry({
+					itemSelector: '.element-item'
+				});
+			});
+		});
+
+	</script>
+</body>
+
+</html>

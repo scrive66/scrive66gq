@@ -1,0 +1,102 @@
+body {
+	background: #ffeed3;
+}
+
+.container {
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+	width: auto;
+	text-align: center;
+}
+
+#footer {
+	position: fixed;
+	padding: 10px;
+	bottom: 0;
+	width: 100%;
+	height: 20px;
+	text-align: center;
+	background: white;
+
+}
+
+
+/* ---- isotope ---- */
+
+#isotope {
+	width: 80%;
+	margin: 0px auto;
+	clear: both;
+	max-width: 1500px;
+}
+
+
+/* clear fix */
+
+#isotope:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+
+
+/* ---- .element-item ---- */
+
+.element-item {
+	margin: 10px 1%;
+	padding: 0;
+}
+
+.grid-sizer {
+	width: 30%;
+}
+
+@media screen and (max-width: 1750px) and (min-width: 1250px) {
+	.grid-sizer {
+		width: 30%;
+	}
+	#isotope {
+		width: 90%;
+	}
+}
+
+@media screen and (max-width: 1250px) and (min-width: 750px) {
+	.grid-sizer {
+		width: 45%;
+	}
+	#isotope {
+		width: 95%;
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.grid-sizer {
+		width: 95%;
+	}
+	#isotope {
+		width: 95%;
+	}
+}
+
+.photo {
+	width: 100%;
+	border-radius: 5%;
+}
+
+.double {
+	width: 50%;
+}
+
+.no-radius {
+	border-radius: 0%;
+}
+
+.twitter-tweet {
+	margin: auto;
+}
+
+.twitter-video {
+	margin: auto;
+}
