@@ -1,5 +1,11 @@
+html,
 body {
-	background: #ffeed3;
+	background: white;
+	min-width: 300px;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .container {
@@ -11,14 +17,35 @@ body {
 	text-align: center;
 }
 
+#header {
+	margin: 0 0 20px 0;
+	padding: 1px;
+	text-align: center;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: auto;
+	background: #555555;
+	color: white;
+}
+
 #footer {
 	position: fixed;
-	padding: 10px;
-	bottom: 0;
-	width: 100%;
-	height: 20px;
 	text-align: center;
-	background: white;
+	bottom: 0px;
+	width: 100%;
+	background: #555555;
+	color: white;
+	padding: 5px;
+}
+
+#footer>. {
+	color: white;
+}
+
+.fix,
+.fix:visited {
+	color: white;
 }
 
 
@@ -98,4 +125,29 @@ body {
 
 .twitter-video {
 	margin: auto;
+}
+
+.button {
+	margin: 0;
+	padding: 5px 10px;
+	width: 120px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	background-color: white;
+	color: black;
+	border: 2px solid #555555;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+}
+
+.button:hover {
+	background-color: #555555;
+	color: white;
+}
+
+.active {
+	background-color: #555555;
+	color: white;
 }
