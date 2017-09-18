@@ -17,9 +17,9 @@
 	<!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 	<!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 </head>
 
 <body data-spy="scroll" data-offset="0" data-target="#theMenu">
@@ -29,8 +29,7 @@
 			<i class="fa fa-times menu-close"></i>
 			<a href="#home" class="smoothScroll">Home</a>
 			<a href="#movies" class="smoothScroll">Movies</a>
-			<a href="index.html?mode=hide_tweet" id="hide_tweet">Hide Tweet</a>
-			<a href="https://twitter.com/scrive66"><i class="fa fa-twitter"></i></a>
+			<a href="index_light.html?mode=hide_tweet" id="hide_tweet">Hide Tweet</a> <a href="https://twitter.com/scrive66"><i class="fa fa-twitter fix"></i></a>
 		</div>
 		<div id="menuToggle"><i class="fa fa-bars"></i></div>
 	</nav>
@@ -51,8 +50,8 @@
 	</div>
 
 	<div id="footer">
-		<a href="index.html" class="fix">フル機能版 <i class="fa fa-truck"></i></a> &nbsp;&nbsp;&nbsp;
-		<a href="" onclick="window.location.reload();" class="fix">再読込 <i class="fa fa-refresh"></i></a> &nbsp;&nbsp;&nbsp;
+		<a href="index.html" class="fix">フル機能版 <i class="fa fa-truck"></i></a>&nbsp;
+		<a href="" onclick="window.location.reload(true);" class="fix">再読込 <i class="fa fa-refresh"></i></a>&nbsp;
 		<a href="#home" class="fix">トップへ戻る <i class="fa fa-arrow-up"></i></a>
 	</div>
 
@@ -69,7 +68,7 @@
 				$('.twitter-tweet').addClass('twitter-video').removeClass('twitter-tweet');
 				var menu_for_hide = $('#hide_tweet');
 				menu_for_hide.text("Show Tweet");
-				menu_for_hide.attr('href', "index.html");
+				menu_for_hide.attr('href', "index_light.html");
 			}
 			if (val.filter_value) {
 				$filterValue = "." + val.filter_value;
@@ -117,6 +116,7 @@
 
 			return vars;
 		}
+
 	</script>
 	<script type="text/javascript">
 		$(function() {
@@ -142,6 +142,7 @@
 				return false;
 			});
 		});
+
 	</script>
 </body>
 

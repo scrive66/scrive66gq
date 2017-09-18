@@ -38,11 +38,11 @@ body {
 	width: 100%;
 	background: #555555;
 	color: white;
-	padding: 5px;
+	padding: 10px;
 }
 
-#footer>. {
-	color: white;
+#footer>* {
+	margin: 5px;
 }
 
 .fix,
